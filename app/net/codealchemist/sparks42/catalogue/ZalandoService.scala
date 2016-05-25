@@ -3,7 +3,7 @@ package net.codealchemist.sparks42.catalogue
 import javax.inject.Inject
 import net.codealchemist.sparks42.catalogue.Represenation.Article
 import play.api.libs.concurrent.Execution.Implicits._
-import play.api.libs.json._
+import play.api.libs.json.{JsError, JsSuccess}
 import play.api.libs.ws._
 import scala.concurrent.{Await, Future}
 import scala.concurrent.duration._
