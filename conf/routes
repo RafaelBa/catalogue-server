@@ -1,0 +1,1 @@
+GET /catalogue                   net.codealchemist.sparks42.catalogue.CatalogueController.articles
