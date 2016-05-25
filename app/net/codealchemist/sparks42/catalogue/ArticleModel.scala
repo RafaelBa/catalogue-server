@@ -10,7 +10,7 @@ object ArticleModel {
     def toArticle = Article(name, brand, price, imageUrl)
   }
 
-  class Articles(tag: Tag) extends Table[ArticleWithId](tag, "SUPPLIERS") {
+  class Articles(tag: Tag) extends Table[ArticleWithId](tag, "Articles") {
     def id = column[Long]("id", O.PrimaryKey, O.AutoInc) // This is the primary key column
     def name = column[String]("name")
     def brand = column[String]("brand")
