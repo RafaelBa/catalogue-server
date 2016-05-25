@@ -11,13 +11,18 @@ object ArticleModel {
   }
 
   class Articles(tag: Tag) extends Table[ArticleWithId](tag, "Articles") {
-    def id = column[Long]("id", O.PrimaryKey, O.AutoInc) // This is the primary key column
+    def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
     def name = column[String]("name")
     def brand = column[String]("brand")
     def price = column[BigDecimal]("price")
     def imageUrl = column[String]("imageUrl")
 
     def * = (id, name, brand, price, imageUrl) <> (ArticleWithId.tupled, ArticleWithId.unapply)
+  }
+
+  class Articles_Genders(tag: Tag) extends Table[(Long, )](tag, "Articles_Genders") {
+    def id = column[Long]("id", O.PrimaryKey)
+    def gender = column[Gender]("gender", O.PrimaryKey)
   }
 
   val articles = TableQuery[Articles]
